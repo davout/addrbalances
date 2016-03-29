@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'optparse'
+require_relative '../lib/addrbalances'
+
+options = {}
+DEFAULT_CFG = '~/.addrbalances/config.yml'
+
+puts "AddrBalances v#{AddrBalances::VERSION} starting"
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: addrbalances [options]"
+
+  opts.on("-c FILE", "--config FILE", "Specify a configuration file path (default #{DEFAULT_CFG})") do |cfg|
+    options[:config] = File.expand_path(cfg, Dir.pwd)
+  end
+
+  opts.on("-s N", "--skip-blocks N", "Skip N blocks before starting the parsing (default 0)") do |skip_blocks|
+    options[:skip_blocks] = skip_blocks.to_i
+  end
+
+  opts.on("-n N", "--num-blocks", "The total numbers of blocks to actually parse") do |n_blocks|
+    options[:n_blocks] = n_blocks.to_i
+  end
+
+  options[:config] ||= File.expand_path(DEFAULT_CFG, Dir.pwd)
+end.parse!
+
+AddrBalances::BCypher.new(options).run!
+

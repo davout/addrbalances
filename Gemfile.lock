@@ -1,0 +1,41 @@
+PATH
+  remote: .
+  specs:
+    addrbalances (0.0.1)
+      addressable
+      blockcypher-ruby
+      mysql2 (~> 0.4.3)
+      oj (~> 2.0)
+      uuidtools (~> 2.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.4.0)
+    bitcoin-ruby (0.0.8)
+    blockcypher-ruby (0.2.4)
+      bitcoin-ruby (~> 0.0.5)
+      ffi
+    coderay (1.1.1)
+    ffi (1.9.10)
+    method_source (0.8.2)
+    mysql2 (0.4.3)
+    oj (2.14.6)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rake (10.5.0)
+    slop (3.6.0)
+    uuidtools (2.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  addrbalances!
+  pry (~> 0.10)
+  rake (~> 10.3)
+
+BUNDLED WITH
+   1.11.2

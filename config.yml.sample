@@ -1,0 +1,18 @@
+mysql:
+  host: localhost
+  adapter: mysql2
+  encoding: utf8
+  database: addrbalances
+  username: addrbalances
+  password: addrbalances
+  reconnect: true
+
+bitcoind:
+  uri: 'http://127.0.0.1:8332/'
+  username: bitcoin
+  password: password
+
+addresses:
+  - '1122tx5G9E5r8Fq8iTgZu7c2pqiMNWULP6'
+  - '11238KmEGTHSK4H1FjR5eM1RvWgNcm11NU'
+
